@@ -1,14 +1,10 @@
 package:
   name: pip
-  version: 1.4.1
+  version: "1.5.6_dev"
 
 source:
-  fn: pip-1.4.1.tar.gz
-  url: https://pypi.python.org/packages/source/p/pip/pip-1.4.1.tar.gz
-  md5: 6afbb46aeb48abac658d4df742bff714
-#  patches:
-   # List any patch files here
-   # - fix.patch
+  git_url: git@github.com:pypa/pip.git
+  git_tag: develop
 
 build:
   entry_points:
@@ -39,18 +35,12 @@ requirements:
 test:
   # Python imports
   imports:
-    - pip.backwardcompat
-    - pip.vendor.html5lib.trie
-    - pip.vendor
+    - pip._vendor
     - pip.commands
-    - pip.vendor.html5lib.treebuilders
-    - pip.vendor.html5lib
-    - pip.vendor.html5lib.serializer
-    - pip.vendor.html5lib.treewalkers
+    - pip.compat
+    - pip.req
+    - pip.utils
     - pip.vcs
-    - pip.vendor.distlib
-    - pip.vendor.html5lib.filters
-    - pip.vendor.distlib._backport
     - pip
 
   commands:
